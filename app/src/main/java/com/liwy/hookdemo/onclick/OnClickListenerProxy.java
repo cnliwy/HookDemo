@@ -19,11 +19,12 @@ public class OnClickListenerProxy implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         System.out.println("---->id:" + v.getId() + " 开始执行点击事件");
+        if (liwyClickListener != null)liwyClickListener.onClickBefore(v);
         long start = System.currentTimeMillis();
         if (mOnClickListener != null)mOnClickListener.onClick(v);
         long end = System.currentTimeMillis();
         System.out.println("---->总共耗时：" + formatTime(end - start));
-        if (liwyClickListener != null)liwyClickListener.onClick(v);
+        if (liwyClickListener != null)liwyClickListener.onClickAfter(v);
         System.out.println("---->id:" + v.getId() + " 点击事件执行结束");
 
     }

@@ -7,5 +7,6 @@ import android.view.View;
  */
 
 public interface LiwyClickListener{
-    public void onClick(View view);
+    public void onClickBefore(View view);
+    public void onClickAfter(View view);
 }

@@ -42,7 +42,6 @@ public class HookManager {
             if (onClickListener != null){
                 OnClickListenerProxy onClickListenerProxy = new OnClickListenerProxy(onClickListener,liwyClickListener);
                 onClickListenerField.set(listenerInfoObj,onClickListenerProxy);
-                Log.e("liwy", "hookView: 设置成功" );
             }
 
         } catch (ClassNotFoundException e) {

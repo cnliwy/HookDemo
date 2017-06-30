@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import com.liwy.hookdemo.onclick.LiwyClickListener;
 
+import java.sql.SQLOutput;
+
 public class MainActivity extends AppCompatActivity {
     Button testBtn;
     Button loginBtn;
@@ -42,8 +44,13 @@ public class MainActivity extends AppCompatActivity {
         super.onAttachedToWindow();
         HookManager.hookActivity(this, new LiwyClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClickBefore(View view) {
+                System.out.println("---->方法执行前");
+            }
 
+            @Override
+            public void onClickAfter(View view) {
+                System.out.println("---->方法执行后");
             }
         });
     }
