@@ -7,8 +7,6 @@ import android.widget.Button;
 
 import com.liwy.hookdemo.onclick.LiwyClickListener;
 
-import java.sql.SQLOutput;
-
 public class MainActivity extends AppCompatActivity {
     Button testBtn;
     Button loginBtn;
