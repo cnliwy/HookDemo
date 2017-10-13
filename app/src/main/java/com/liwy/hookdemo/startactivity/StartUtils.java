@@ -27,7 +27,7 @@ public class StartUtils {
     }
 
     // hook ActivityManagerServices
-    public void hookAMS() throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
+    public void hookAMS() throws Exception {
         // 反射得到IActivityManager
         Class<?> forName = Class.forName("android.app.ActivityManagerNative");
         Field defaultField = forName.getDeclaredField("gDefault");
@@ -130,6 +130,7 @@ public class StartUtils {
             if (msg.what == 100){
                 handlerLaunchActivity(mHandler,msg);
             }
+            mHandler.handleMessage(msg);
             return true;
         }
         private void handlerLaunchActivity(Handler handler,Message msg){

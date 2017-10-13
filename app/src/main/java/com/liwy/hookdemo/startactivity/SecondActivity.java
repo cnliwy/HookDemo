@@ -13,6 +13,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        System.out.println("----------->SecondActivity create");
     }
     public void turnNext(View view){
         Intent intent = new Intent(this,ThirdActivity.class);
