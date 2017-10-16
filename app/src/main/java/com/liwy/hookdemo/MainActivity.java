@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(newBase);
-        initHook2();
-    }
-    public void initHook2(){
-        StartActivityUtils util = new StartActivityUtils(this,ProxyActivity.class);
+//    @Override
+//    protected void attachBaseContext(Context newBase) {
+//        super.attachBaseContext(newBase);
+//        initHook2(newBase);
+//    }
+    public void initHook2(Context context){
+        StartActivityUtils util = new StartActivityUtils(context,ProxyActivity.class);
         util.hookCode();
     }
 
@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void turnNext(View view){
         System.out.println("准备进入第二页面");
-        Intent intent = new Intent(this,SecondActivity.class);
+//        Intent intent = new Intent(this,SecondActivity.class);
+        Intent intent = new Intent(this,ProxyActivity.class);
         startActivity(intent);
     }
 
